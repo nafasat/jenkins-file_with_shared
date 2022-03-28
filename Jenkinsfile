@@ -12,14 +12,14 @@ pipeline {
         string defaultValue: 'localhost', description: 'You may change SFTP_IP', name: 'sftp_ip'
     }    
     stages {
-        stage('checking') {
+        stage('Get_SFTP') {
             steps {
                 script {
                     jenkins_cd.sftp_get(credential_sftp_name: credential_sftp_name,sftp_ip: "${sftp_ip}", tar_archive_name:"${tar_archive_name}", commit_msg:"${commit_msg}")
                 }
             }
         }
-        stage ('Push_to_SFTP') {
+        stage ('Push_to_GitHub') {
             steps {
                 script {
                     jenkins_cd.push_github(credential_github_name: credential_github_name,tar_archive_name:"${tar_archive_name}",target: "${target_dir}")
