@@ -1,6 +1,6 @@
 @Library('jenkins-demo') _
 def credential_sftp_name = 'sftp-local-username-pwd'
-def credential_github_name = 'sftp-key'
+def credential_github_name = 'github-ssh-connect'
 pipeline {
     agent any
     parameters
