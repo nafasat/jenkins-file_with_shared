@@ -29,7 +29,7 @@ pipeline {
                         sh ''' git clone https://github.com/nafasat/testing_git.git
                           unzip "${tar_archive_name}"
                           rm -rf "${tar_archive_name}"
-                          cp ./ansible.cfg /testing_git/
+                          cp ./ansible.cfg ./testing_git/
                           cd /testing_git/
                           git checkout dtesting
                           git add -A
