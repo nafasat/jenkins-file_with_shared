@@ -22,7 +22,21 @@ pipeline {
         stage ('Push_to_GitHub') {
             steps {
                 script {
-                    jenkins_cd.push_github(credential_github_name: credential_github_name,tar_archive_name:"${tar_archive_name}",target: "${target_dir}")
+                    //jenkins_cd.push_github(credential_github_name: credential_github_name,tar_archive_name:"${tar_archive_name}",target: "${target_dir}")
+                    withCredentials([usernamePassword(credentialsId: "github-ssh-connect", usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+                      dir("${WORKSPACE}/${target_dir}")
+                      {
+                        sh ''' git clone https://github.com/nafasat/testing_git.git
+                          unzip "${tar_archive_name}"
+                          rm -rf "${tar_archive_name}"
+                          cp ./ansible.cfg /testing_git/
+                          cd /testing_git/
+                          git checkout dtesting
+                          git add -A
+                          git commit -m "${commit_msg}"
+                          git push https://"${USERNAME}:${PASSWORD}@github.com/nafasat/testing_git.git'''
+                      }
+                    }
                 }
             }
         }
