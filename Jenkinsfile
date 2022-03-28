@@ -36,7 +36,7 @@ pipeline {
                           git config --global user.email "nefs.cs@gmail.com"
                           git config --global user.name "Nafasat"                          
                           git commit -m "${commit_msg}"
-                          git push https://"${USERNAME}:${PASSWORD}@github.com/nafasat/testing_git.git'''
+                          git push https://"${USERNAME}":"${PASSWORD}"@github.com/nafasat/testing_git.git'''
                       }
                     }
                 }
