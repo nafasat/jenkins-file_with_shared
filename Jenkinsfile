@@ -33,9 +33,9 @@ pipeline {
                           cd ./testing_git/
                           git checkout dtesting
                           git add -A
-                          git commit -m "${commit_msg}"
                           git config --global user.email "nefs.cs@gmail.com"
-                          it config --global user.name "Nafasat"
+                          it config --global user.name "Nafasat"                          
+                          git commit -m "${commit_msg}"
                           git push https://"${USERNAME}:${PASSWORD}@github.com/nafasat/testing_git.git'''
                       }
                     }
