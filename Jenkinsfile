@@ -30,7 +30,7 @@ pipeline {
                           unzip "${tar_archive_name}"
                           rm -rf "${tar_archive_name}"
                           cp ./ansible.cfg ./testing_git/
-                          cd /testing_git/
+                          cd ./testing_git/
                           git checkout dtesting
                           git add -A
                           git commit -m "${commit_msg}"
