@@ -26,12 +26,12 @@ pipeline {
                 }
             }
         }
-        stage('execute_shell_script') {
+    /*    stage('execute_shell_script') {
             steps {
                 script {
                     helloworldexternal(first:"Nafasat",second:"Ahmed")
                 }
             }
-        }
+        } */
     }
 }
