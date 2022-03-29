@@ -22,7 +22,7 @@ pipeline {
         stage ('Push_to_GitHub') {
             steps {
                 script {
-                        jenkins_cd.push_github(credential_github_name: credential_github_name, tar_archive_name:"${tar_archive_name}", target: "${target_dir}", commit_msg: "${commit_msg}", jenkins_user_email:'nefs.cs@gmail.com', jenkins_user: 'naafsat')
+                        jenkins_cd.push_github(credential_github_name: credential_github_name, archive_name:"${tar_archive_name}", target: "${target_dir}", commit_msg: "${commit_msg}", jenkins_user_email:'nefs.cs@gmail.com', jenkins_user: 'naafsat')
                 }
             }
         }
