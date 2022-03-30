@@ -15,7 +15,7 @@ pipeline {
         stage('Get_SFTP') {
             steps {
                 script {
-                    jenkins_cd.sftp_get(credential_sftp_name: credential_sftp_name,sftp_ip: "${sftp_ip}", tar_archive_name:"${tar_archive_name}", commit_msg:"${commit_msg}")
+                    jenkins_cd.sftp_get(credential_sftp_name: credential_sftp_name,sftp_ip: "${sftp_ip}", tar_archive_name:"${tar_archive_name}", target_path:"${target_dir}")
                 }
             }
         }
