@@ -8,7 +8,7 @@ pipeline {
         string defaultValue: '/SMEUAT/CLO', description: 'Please enter the artifact location in SFTP under admin dir', name: 'sftp_path'
         string defaultValue: 'ansible.zip', description: 'Please enter the tar archive file name', name: 'tar_archive_name'
         string defaultValue: '', description: 'Please enter the commit message', name: 'commit_msg'
-        string defaultValue: '', description: 'Please enter the target directory in the repo', name: 'target_dir'
+        string defaultValue: '.', description: 'Please enter the target directory in the repo wit', name: 'target_dir'
         string defaultValue: 'localhost', description: 'You may change SFTP_IP', name: 'sftp_ip'
         string defaultValue: 'github.com/nafasat/testing_git.git', description: 'You may change SFTP_IP', name: 'repo_name_without_https'
     }    
