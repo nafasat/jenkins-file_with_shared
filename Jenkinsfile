@@ -31,7 +31,7 @@ pipeline {
     post {
         // Clean after build
         always {
-            cleanWs(patterns: [[pattern: '*', type: 'INCLUDE']])
+            cleanWs deleteDirs: true, patterns: [[pattern: '*', type: 'INCLUDE']]
         }
     }
 }
