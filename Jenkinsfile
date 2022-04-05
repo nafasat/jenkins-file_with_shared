@@ -11,8 +11,8 @@ pipeline {
         string defaultValue: '.', description: 'Please enter the target directory in the repo wit', name: 'target_dir'
         string defaultValue: 'localhost', description: 'You may change SFTP_IP', name: 'sftp_ip'
         string defaultValue: 'github.com/nafasat/testing_git.git', description: 'You may change SFTP_IP', name: 'repo_name_without_https'
-        string defaultValue: 'master', description: 'You may git clone branch name', name: 'push_to_feature_branch'
-        string defaultValue: '', description: 'You may change git push feature branch name', name: 'pull_from_branch'
+        string defaultValue: '', description: 'You may git clone branch name', name: 'push_to_feature_branch'
+        string defaultValue: 'master', description: 'You may change git push feature branch name', name: 'pull_from_branch'
     }    
     stages {
         stage('Get_SFTP') {
