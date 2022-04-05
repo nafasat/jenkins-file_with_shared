@@ -26,6 +26,8 @@ pipeline {
             steps {
                 script {
                         jenkins_cd.push_github_script(credential_github_name: credential_github_name, archive_name:"${tar_archive_name}", repo_name_without_https: "${repo_name_without_https}", commit_msg: "${commit_msg}", pull_from_branch_name: "${pull_from_branch}", push_to_feature_branch_name: "${push_to_feature_branch}")
+                        sh "echo push_to_feature_branch, $push_to_feature_branch"
+                        sh "echo pull_from_branch, $pull_from_branch"
                 }
             }
         }
