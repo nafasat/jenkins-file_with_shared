@@ -30,10 +30,10 @@ pipeline {
             }
         }
     }
-    post {
+   // post {
         // Clean after build
-        always {
+     //   always {
             cleanWs deleteDirs: true, patterns: [[pattern: '*', type: 'INCLUDE']]
-        }
-    }
+       // }
+    //}
 }
