@@ -25,7 +25,8 @@ pipeline {
         stage ('Push_to_GitHub') {
             steps {
                 script {
-                        push_github_auth_based(credential_github_name: credential_github_name, zip_file_name:"${tar_archive_name}", repo_name_without_https: "${repo_name_without_https}", commit_msg: "${commit_msg}", pull_from_branch_name: "${pull_from_branch}", push_to_feature_branch_name: "${push_to_feature_branch}")
+                        //push_github_auth_based(credential_github_name: credential_github_name, zip_file_name:"${tar_archive_name}", repo_name_without_https: "${repo_name_without_https}", commit_msg: "${commit_msg}", pull_from_branch_name: "${pull_from_branch}", push_to_feature_branch_name: "${push_to_feature_branch}")
+                        helloworldexternal(first:"Nafasat",second:"Ahmed")
                 }
             }
         }
