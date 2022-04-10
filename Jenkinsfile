@@ -15,17 +15,10 @@ pipeline {
         string defaultValue: '', description: 'You may change git push feature branch name', name: 'push_to_feature_branch'
     }    
     stages {
-        stage('Get_SFTP') {
-            steps {
-                script {
-                    jenkins_cd.sftp_get(credential_sftp_name: credential_sftp_name,sftp_ip: "${sftp_ip}", tar_archive_name:"${tar_archive_name}", sftp_path:"${sftp_path}")
-                }
-            }
-        }
         stage ('Push_to_GitHub') {
             steps {
                 script {
-                        push_github_auth_based(credential_github_name: credential_github_name, zip_file_name:"${tar_archive_name}", repo_name_without_https: "${repo_name_without_https}", commit_msg: "${commit_msg}", pull_from_branch_name: "${pull_from_branch}", push_to_feature_branch_name: "${push_to_feature_branch}")
+                        push_to_github.push_github_auth_based(credential_github_name: credential_github_name, credential_sftp_name: credential_sftp_name, zip_file_name:"${tar_archive_name}", repo_name_without_https: "${repo_name_without_https}", commit_msg: "${commit_msg}", pull_from_branch_name: "${pull_from_branch}", push_to_feature_branch_name: "${push_to_feature_branch}")
                 }
             }
         }
