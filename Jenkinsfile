@@ -18,7 +18,7 @@ pipeline {
         stage ('Push_to_GitHub') {
             steps {
                 script {
-                        push_to_github.push_github_auth_based(credential_github_name: credential_github_name, credential_sftp_name: credential_sftp_name, zip_file_name:"${tar_archive_name}", sftp_ip:"${sftp_ip}", repo_name_without_https: "${repo_name_without_https}", commit_msg: "${commit_msg}", pull_from_branch_name: "${pull_from_branch}")
+                        push_to_github.push_github_auth_based(credential_github_name: credential_github_name, credential_sftp_name: credential_sftp_name, zip_file_name:"${tar_archive_name}", sftp_ip:"${sftp_ip}", repo_name_without_https: "${repo_name_without_https}", commit_msg: "${commit_msg}", pull_from_branch_name: "${pull_from_branch}", feature_branch_name: "${push_to_feature_branch}")
                 }
             }
         }
